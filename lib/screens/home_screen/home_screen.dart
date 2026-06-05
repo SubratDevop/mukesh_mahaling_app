@@ -1,7 +1,6 @@
-// ignore_for_file: must_be_immutable, deprecated_member_use
-
 import 'package:flutter/material.dart';
 import 'package:mukesh_mahaling/core/extension/sizedbox.dart';
+import 'package:mukesh_mahaling/core/resources/font_size.dart';
 import 'package:mukesh_mahaling/core/routes/pages.dart';
 import 'package:mukesh_mahaling/core/widgets/app_bar.dart';
 
@@ -108,9 +107,9 @@ class HomeScreen extends StatelessWidget {
                           10.kH,
                           GrievanceCard(),
                           10.kH,
-                          DevelopmentalWorksCard(),
-                          10.kH,
-                          NewsletterCard(),
+                          // DevelopmentalWorksCard(),
+                          // 10.kH,
+                          // NewsletterCard(),
                           15.kH,
                         ],
                       ),
@@ -149,10 +148,9 @@ class GrievanceCard extends StatelessWidget {
               children: [
                 Icon(Icons.assignment, size: 22, color: Colors.black87),
                 8.kW,
-                H2Text(
-                  tittle: "Grievance Redressal",
-                  textSize: 10,
-                  textWeight: FontWeight.w600,
+                Text(
+                  "Hello World",
+                  style: TextStyle(fontSize: FontSize.cardTitle(context)),
                 ),
               ],
             ),
@@ -179,7 +177,7 @@ class GrievanceCard extends StatelessWidget {
                     icon: const Icon(Icons.add, color: Colors.white, size: 22),
                     label: H2Text(
                       tittle: "Register",
-                      textSize: 9,
+                      // textSize: AppFontSize.title(context),
                       tittleColor: Colors.white,
                       textWeight: FontWeight.w600,
                     ),
@@ -219,208 +217,202 @@ class GrievanceCard extends StatelessWidget {
   }
 }
 
-//! DevelopmentalWorksCard
+// //! DevelopmentalWorksCard
 
-class DevelopmentalWorksCard extends StatelessWidget {
-  const DevelopmentalWorksCard({super.key});
+// class DevelopmentalWorksCard extends StatelessWidget {
+//   const DevelopmentalWorksCard({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      color: Color(0xFFFAFAFA),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-        side: BorderSide(color: Color(0xFFE4E4E7)),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            //^ Header Row (Title + View All)
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Icon(Icons.apartment, color: Colors.black87),
-                    const SizedBox(width: 6),
-                    Text(
-                      "Developmental Works",
-                      style: TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
-                TextButton.icon(
-                  onPressed: () {},
+//   @override
+//   Widget build(BuildContext context) {
+//     return Card(
+//       color: Color(0xFFFAFAFA),
+//       shape: RoundedRectangleBorder(
+//         borderRadius: BorderRadius.circular(12),
+//         side: BorderSide(color: Color(0xFFE4E4E7)),
+//       ),
+//       child: Padding(
+//         padding: const EdgeInsets.all(16),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             //^ Header Row (Title + View All)
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: [
+//                 Row(
+//                   children: [
+//                     Icon(Icons.apartment, color: Colors.black87),
+//                     const SizedBox(width: 6),
+//                     H2Text(
+//                       tittle: "Developmental Works",
+//                       textSize:AppFontSize.title(context) , //10,,
+//                       tittleColor: Colors.white,
+//                       textWeight: FontWeight.w600,
+//                     ),
+//                   ],
+//                 ),
+//                 TextButton.icon(
+//                   onPressed: () {},
 
-                  icon: SizedBox.shrink(),
-                  label: Text(
-                    "View All",
+//                   icon: SizedBox.shrink(),
+//                   label: Text(
+//                     "View All",
 
-                    style: TextStyle(
-                      fontSize: 7,
-                      decoration: TextDecoration.underline,
-                      decorationColor: Colors.deepOrange,
-                      decorationThickness: 2,
-                      color: Colors.deepOrange,
-                      height: 1.5, 
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    minimumSize: Size(0, 0),
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  ),
-                ),
-              
-              ],
-            ),
-            const SizedBox(height: 12),
+//                     style: TextStyle(
+//                       fontSize: 7,
+//                       decoration: TextDecoration.underline,
+//                       decorationColor: Colors.deepOrange,
+//                       decorationThickness: 2,
+//                       color: Colors.deepOrange,
+//                       height: 1.5,
+//                       fontWeight: FontWeight.w500,
+//                     ),
+//                   ),
+//                   style: TextButton.styleFrom(
+//                     padding: EdgeInsets.zero,
+//                     minimumSize: Size(0, 0),
+//                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+//                   ),
+//                 ),
+//               ],
+//             ),
+//             const SizedBox(height: 12),
 
-            // Image Section
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                "assets/images/puitala_office.png", // replace with your image
-                fit: BoxFit.cover,
-              ),
-            ),
-            const SizedBox(height: 8),
+//             // Image Section
+//             ClipRRect(
+//               borderRadius: BorderRadius.circular(10),
+//               child: Image.asset(
+//                 "assets/images/puitala_office.png", // replace with your image
+//                 fit: BoxFit.cover,
+//               ),
+//             ),
+//             const SizedBox(height: 8),
 
-            // Caption
-            Text(
-              "New office at Puitala block inaugurated",
-              style: TextStyle(fontSize: 09, fontWeight: FontWeight.w500),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+//             // Caption
+//             Text(
+//               "New office at Puitala block inaugurated",
+//               style: TextStyle(fontSize: 09, fontWeight: FontWeight.w500),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-//! NewsletterCard
+// //! NewsletterCard
 
-class NewsletterCard extends StatelessWidget {
-  const NewsletterCard({super.key});
+// class NewsletterCard extends StatelessWidget {
+//   const NewsletterCard({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    final months = ["July", "June", "May"];
-    final year = "2025";
+//   @override
+//   Widget build(BuildContext context) {
+//     final months = ["July", "June", "May"];
+//     final year = "2025";
 
-    return Card(
-      color: Color(0xFFFAFAFA),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-        side: BorderSide(color: Color(0xFFE4E4E7)),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Header Row
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Icon(Icons.newspaper_outlined, color: Colors.black87),
-                    const SizedBox(width: 6),
-                    Text(
-                      "Newsletter",
-                      style: TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
-                TextButton.icon(
-                  onPressed: () {},
+//     return Card(
+//       color: Color(0xFFFAFAFA),
+//       shape: RoundedRectangleBorder(
+//         borderRadius: BorderRadius.circular(12),
+//         side: BorderSide(color: Color(0xFFE4E4E7)),
+//       ),
+//       child: Padding(
+//         padding: const EdgeInsets.all(16),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             // Header Row
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: [
+//                 Row(
+//                   children: [
+//                     Icon(Icons.newspaper_outlined, color: Colors.black87),
+//                     const SizedBox(width: 6),
+//                     H2Text(
+//                       tittle: "Newsletter",
+//                       textSize:AppFontSize.title(context) , //10,,
+//                       tittleColor: Colors.white,
+//                       textWeight: FontWeight.w600,
+//                     ),
+//                   ],
+//                 ),
+//                 TextButton.icon(
+//                   onPressed: () {},
 
-                  icon: SizedBox.shrink(),
-                  label: Text(
-                    "View All",
+//                   icon: SizedBox.shrink(),
+//                   label: Text(
+//                     "View All",
 
-                    style: TextStyle(
-                      fontSize: 7,
-                      decoration: TextDecoration.underline,
-                      decorationColor: Colors.deepOrange,
-                      decorationThickness: 2,
-                      color: Colors.deepOrange,
-                      height: 1.5, 
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    minimumSize: Size(0, 0),
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  ),
-                ),
-              
-              ],
-            ),
-            const SizedBox(height: 12),
+//                     style: TextStyle(
+//                       fontSize: 7,
+//                       decoration: TextDecoration.underline,
+//                       decorationColor: Colors.deepOrange,
+//                       decorationThickness: 2,
+//                       color: Colors.deepOrange,
+//                       height: 1.5,
+//                       fontWeight: FontWeight.w500,
+//                     ),
+//                   ),
+//                   style: TextButton.styleFrom(
+//                     padding: EdgeInsets.zero,
+//                     minimumSize: Size(0, 0),
+//                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+//                   ),
+//                 ),
+//               ],
+//             ),
+//             const SizedBox(height: 12),
 
-            // Horizontal Month List
-            SizedBox(
-              height: 90,
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                itemCount: months.length,
-                separatorBuilder: (_, __) => const SizedBox(width: 12),
-                itemBuilder: (context, index) {
-                  return Container(
-                    width: 80,
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration( 
-                      
-                      color: Colors.grey[100],
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                        color: Colors.grey.withOpacity(0.5),
-                        width: 1,
-                      ),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          months[index],
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.deepOrange,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          year,
-                          style: TextStyle(fontSize: 9, color: Colors.black87),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ),
-         
-          ],
-        ),
-      ),
-    );
-  }
-}
+//             // Horizontal Month List
+//             SizedBox(
+//               height: 90,
+//               child: ListView.separated(
+//                 scrollDirection: Axis.horizontal,
+//                 itemCount: months.length,
+//                 separatorBuilder: (_, __) => const SizedBox(width: 12),
+//                 itemBuilder: (context, index) {
+//                   return Container(
+//                     width: 80,
+//                     padding: const EdgeInsets.all(12),
+//                     decoration: BoxDecoration(
+//                       color: Colors.grey[100],
+//                       borderRadius: BorderRadius.circular(12),
+//                       border: Border.all(
+//                         color: Colors.grey.withValues(alpha: 0.5),
+//                         width: 1,
+//                       ),
+//                     ),
+//                     child: Column(
+//                       mainAxisAlignment: MainAxisAlignment.center,
+//                       children: [
+//                         Text(
+//                           months[index],
+//                           style: TextStyle(
+//                             fontSize: 11,
+//                             fontWeight: FontWeight.bold,
+//                             color: Colors.deepOrange,
+//                           ),
+//                         ),
+//                         const SizedBox(height: 4),
+//                         Text(
+//                           year,
+//                           style: TextStyle(fontSize: 9, color: Colors.black87),
+//                         ),
+//                       ],
+//                     ),
+//                   );
+//                 },
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-//! CustomDrawer
+// //! CustomDrawer
 
 class CustomDrawer extends StatelessWidget {
   final VoidCallback onClose;
@@ -539,7 +531,7 @@ class CustomDrawer extends StatelessWidget {
                         child: TextButton(
                           onPressed: () => Get.toNamed("AdminScreen"),
                           style: ButtonStyle(
-                            side: MaterialStateProperty.all(
+                            side: WidgetStateProperty.all(
                               const BorderSide(
                                 color: Colors.white, // 🔥 Border color here
                                 width: 1.5,
@@ -577,7 +569,11 @@ class CustomDrawer extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: H2Text(tittle: title, tittleColor: Colors.white,textSize: 10,),
+            child: H2Text(
+              tittle: title,
+              tittleColor: Colors.white,
+              textSize: 10,
+            ),
           ),
           if (trailing != null) trailing,
         ],

@@ -16,8 +16,7 @@ class AboutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-     Scaffold(
+    return Scaffold(
       backgroundColor: AppColor.statusbarColor,
       body: Padding(
         padding: const EdgeInsets.only(top: 40.0, left: 15, right: 15),
@@ -50,7 +49,6 @@ class AboutScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-               
                 ],
               ),
             ),
@@ -127,7 +125,6 @@ class AboutScreen extends StatelessWidget {
                     ),
                     10.kH,
 
-                    // Expanded(child: BiographyAccordion()),
                     Expanded(
                       child: ListView.separated(
                         separatorBuilder: (_, __) => Divider(
@@ -150,13 +147,18 @@ class AboutScreen extends StatelessWidget {
                               onExpansionChanged: (expanded) =>
                                   controller.onExpansionChange(index, expanded),
 
-                              title: H2Text(
+                              title:
+                              //  Text(
+                              //   controller.sections[index]["title"]!,
+                              //   style: AppTypography.subtitle(context),
+                              // ),
+
+                               H2Text(
                                 tittle: controller.sections[index]["title"]!,
                                 textSize: 10,
                                 textWeight: FontWeight.w500,
                                 maxTextlines: 2,
                               ),
-
                               iconColor: Colors.orange,
                               collapsedIconColor: Colors.black,
                               backgroundColor: controller.isExpanded.value
@@ -193,37 +195,6 @@ class AboutScreen extends StatelessWidget {
         ),
       ),
     );
-  
-  }
-}
-
-class BiographyAccordion extends StatelessWidget {
-  const BiographyAccordion({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      padding: EdgeInsets.zero,
-      children: const [
-        CustomExpansionTile(
-          title: "Roots & Early Leadership",
-          content:
-              "Dr. Mukesh Mahaling was born to two retired teachers, Mr. Miniketan Mahaling and Mrs. Basanta Barik, in western Odisha. As the eldest among four siblings, discipline and responsibility shaped his early life. His leadership qualities emerged during his student days when he became General Secretary of Anchal College Student Union. Later, as Secretary of the SPCB Officers’ Association, he further honed his ability to guide teams and inspire people.",
-        ),
-        CustomExpansionTile(
-          title: "Two Decades as an Environmental Scientist",
-          content: "Details about environmental scientist career...",
-        ),
-        CustomExpansionTile(
-          title: "Entry into Politics",
-          content: "Details about entry into politics...",
-        ),
-        CustomExpansionTile(
-          title: "Vision & Philosophy",
-          content: "Details about vision and philosophy...",
-        ),
-      ],
-    );
   }
 }
 
@@ -248,9 +219,11 @@ class CustomExpansionTile extends StatelessWidget {
           H1Text(
             tittle: title,
             tittleColor: Colors.black,
-            textSize: 5,
+            textSize: 50,
             textWeight: FontWeight.w500,
           ),
+          // Text("title", style: AppTypography.bodyLarge(context)),
+
           SizedBox(
             width: ScreenSize.width(context),
             child: Divider(color: Color(0xFFE4E4E7), thickness: 0.9),
