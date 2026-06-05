@@ -44,7 +44,7 @@ class H1Text extends StatelessWidget {
       textAlign: alignnment ?? TextAlign.start,
       style: GoogleFonts.outfit(
         letterSpacing: letterSpace ?? 0.0,
-        fontSize: textSize ?? AppTextSize.h1Textsize,
+        fontSize: textSize ,
         fontWeight: textWeight ?? FontWeight.w700,
         color: tittleColor ?? const Color(0xFF22262F),
       ),
@@ -84,7 +84,7 @@ class H2Text extends StatelessWidget {
       textAlign: alignnment ?? TextAlign.start,
       style: GoogleFonts.outfit(
         letterSpacing: letterSpace ?? 0.0,
-        fontSize: textSize ?? AppTextSize.h2Textsize,
+        fontSize: textSize ,
         fontWeight: textWeight ?? FontWeight.normal,
         color: tittleColor ?? const Color(0xFF22262F),
       ),
@@ -124,7 +124,7 @@ class H3Text extends StatelessWidget {
       style: GoogleFonts.outfit(
         letterSpacing: letterSpace ?? 0.0,
        
-        fontSize: textSize ?? AppTextSize.h3Textsize,
+        fontSize: textSize ,
         fontWeight: textWeight ?? FontWeight.w400,
         color: tittleColor ?? const Color(0xFF22262F),
       ),
@@ -162,7 +162,7 @@ class DescText extends StatelessWidget {
       overflow: textOverflow ?? TextOverflow.ellipsis,
       textAlign: alignnment ?? TextAlign.start,
       style: GoogleFonts.outfit(
-               fontSize: textSize ?? AppTextSize.h3Textsize + 3,
+               fontSize: textSize,
         fontWeight: textWeight ?? FontWeight.w400,
         color: tittleColor ?? const Color(0xFF22262F),
       ),

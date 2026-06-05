@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mukesh_mahaling/core/extension/sizedbox.dart';
+import 'package:mukesh_mahaling/core/resources/font_size.dart';
 import 'package:mukesh_mahaling/core/resources/image_widget.dart';
 
 import '../../core/routes/pages.dart';
@@ -25,7 +26,7 @@ class VisionMissionScreen extends StatelessWidget {
                   Center(
                     child: H1Text(
                       tittle: "Mission & Vision",
-                      textSize: 22,
+                      textSize: FontSize.screenHeading(context),
                       tittleColor: AppColor.primaryColor,
                     ),
                   ),
@@ -46,7 +47,7 @@ class VisionMissionScreen extends StatelessWidget {
                 ],
               ),
             ),
-          
+
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
@@ -61,6 +62,7 @@ class VisionMissionScreen extends StatelessWidget {
                     H1Text(
                       tittle: "Vision",
                       tittleColor: AppColor.primaryColor,
+                      textSize: FontSize.bodyLarge(context),
                       textWeight: FontWeight.w500,
                     ),
                     2.kH,
@@ -86,6 +88,7 @@ class VisionMissionScreen extends StatelessWidget {
                     H1Text(
                       tittle: "Mission",
                       tittleColor: AppColor.primaryColor,
+                      textSize: FontSize.bodyLarge(context),
                       textWeight: FontWeight.w500,
                     ),
                     2.kH,
@@ -101,8 +104,8 @@ class VisionMissionScreen extends StatelessWidget {
                     ),
                     15.kH,
 
-                    //! Vision
-                    VisionSection(),
+                    //! Mision
+                    MisionSection(),
                     20.kH,
                   ],
                 ),
@@ -115,14 +118,14 @@ class VisionMissionScreen extends StatelessWidget {
   }
 }
 
-class VisionSection extends StatefulWidget {
-  const VisionSection({super.key});
+class MisionSection extends StatefulWidget {
+  const MisionSection({super.key});
 
   @override
-  State<VisionSection> createState() => _VisionSectionState();
+  State<MisionSection> createState() => _MisionSectionState();
 }
 
-class _VisionSectionState extends State<VisionSection> {
+class _MisionSectionState extends State<MisionSection> {
   bool expanded = false;
 
   final List<String> bulletTexts = [
@@ -158,7 +161,7 @@ class _VisionSectionState extends State<VisionSection> {
               },
               child: DescText(
                 tittle: expanded ? "Read less" : "Read more",
-                textSize: AppTextSize.h3Textsize + 4,
+                textSize: FontSize.cardSubTitle(context),
                 textWeight: FontWeight.w600,
                 tittleColor: AppColor.primaryColor,
               ),

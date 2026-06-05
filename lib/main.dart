@@ -29,9 +29,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //^ Set status bar color
     AppStatusBar.splashStatusBarColor();
-
-    print(MediaQuery.of(context).size.height.toString());
-    print(MediaQuery.of(context).size.width.toString());
     return GetMaterialApp(
       theme: ThemeData(dividerColor: Colors.transparent),
       debugShowCheckedModeBanner: false,

@@ -56,15 +56,15 @@ class AppTypography {
 
 //!!!!
 
-//* Meri Recommendation for 90% Flutter Apps
-// Caption      : 12
-// Label        : 13
-// Body         : 16
-// Button       : 15
-// Card Title   : 18
-// Section Title: 20
-// Page Title   : 24
-// Heading      : 28
+//*  Recommendation for 90% Flutter Apps
+
+//& Caption      : 12
+//& Label        : 13
+//& Body         : 16
+//& Button       : 15
+//& Card Title   : 18
+//& Page Title   : 24
+//& Screen Heading      : 28
 
 class FontSize {
   ///^ Secondary Info / Captions
@@ -89,17 +89,18 @@ class FontSize {
   static double cardTitle(BuildContext context) =>
       AppTypography.scale(context, 16);
 
-  ///^ Section Titles
-  static double sectionTitle(BuildContext context) =>
-      AppTypography.scale(context, 20);
+  ///^ Card SubTitle   : 14
+  static double cardSubTitle(BuildContext context) =>
+      AppTypography.scale(context, 14);
+
 
   ///^ Header / Page Titles
   static double pageTitle(BuildContext context) =>
       AppTypography.scale(context, 24);
 
   ///^ Large Screen Heading
-  static double heading(BuildContext context) =>
-      AppTypography.scale(context, 28);
+  static double screenHeading(BuildContext context) =>
+      AppTypography.scale(context, 26);  //28
 
   ///^ Hero Heading (Rare Usage)
   static double display(BuildContext context) =>

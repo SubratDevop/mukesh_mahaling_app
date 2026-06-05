@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:mukesh_mahaling/core/resources/font_size.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/resources/app_text_size.dart';
@@ -133,7 +134,7 @@ class NewsLetterScreen extends StatelessWidget {
                 children: [
                   Center(
                     child: H1Text(
-                      textSize: 22,
+                      textSize: FontSize.screenHeading(context),
                       tittle: "Newslelter",
                       tittleColor: AppColor.primaryColor,
                     ),
@@ -192,8 +193,9 @@ class NewsLetterScreen extends StatelessWidget {
                             alignment: Alignment.center,
                             child: Text(
                               items[index]["title"]!,
-                              style: const TextStyle(
+                              style:  TextStyle(
                                 fontWeight: FontWeight.bold,
+                                fontSize: FontSize.cardSubTitle(context),
                                 color: Colors.deepOrange,
                               ),
                             ),

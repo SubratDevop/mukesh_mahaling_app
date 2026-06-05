@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mukesh_mahaling/core/extension/sizedbox.dart';
 import 'package:mukesh_mahaling/core/resources/app_text_size.dart';
 import 'package:mukesh_mahaling/core/resources/colors.dart';
+import 'package:mukesh_mahaling/core/resources/font_size.dart';
 import 'package:mukesh_mahaling/core/resources/screen_size.dart';
 import 'package:mukesh_mahaling/screens/about_screen/controler/about_controller.dart';
 
@@ -31,7 +32,7 @@ class AboutScreen extends StatelessWidget {
                   Center(
                     child: H1Text(
                       tittle: "About",
-                      textSize: 15,
+                      textSize: FontSize.screenHeading(context),
                       tittleColor: AppColor.primaryColor,
                     ),
                   ),
@@ -87,7 +88,7 @@ class AboutScreen extends StatelessWidget {
                       text: TextSpan(
                         text: "Dr. Mukesh Mahalingis ", // default style
                         style: GoogleFonts.outfit(
-                          fontSize: AppTextSize.h3Textsize + 3,
+                          fontSize: FontSize.cardTitle(context),
                           fontWeight: FontWeight.w700,
                           color: const Color(0xFF22262F),
                         ),
@@ -96,8 +97,8 @@ class AboutScreen extends StatelessWidget {
                             text:
                                 "an Indian Politician born in the year 1973 in the village Nagaon (B) of Agalpur Block of Balangir district coming under jurisdiction of 66-Loisingha Assembly Constituency of the State of Odisha. Dr. Mahaling being a Member of Bharatiya Janata Party (BJP) has been elected as Member of Legislative Assembly (MLA) in the General Election 2019 for 66-Loisingha Assembly Constituency. ",
                             style: GoogleFonts.outfit(
-                              fontSize: AppTextSize.h3Textsize + 3,
-                              fontWeight: FontWeight.w400,
+                              fontSize: FontSize.cardTitle(context),
+                              fontWeight: FontWeight.w300,
                               color: const Color(0xFF22262F),
                             ),
                           ),
@@ -110,6 +111,7 @@ class AboutScreen extends StatelessWidget {
                     H1Text(
                       tittle: "Journey So Far",
                       tittleColor: AppColor.primaryColor,
+                      textSize: FontSize.bodyLarge(context),
                       textWeight: FontWeight.w500,
                     ),
                     2.kH,
@@ -148,17 +150,13 @@ class AboutScreen extends StatelessWidget {
                                   controller.onExpansionChange(index, expanded),
 
                               title:
-                              //  Text(
-                              //   controller.sections[index]["title"]!,
-                              //   style: AppTypography.subtitle(context),
-                              // ),
-
-                               H2Text(
-                                tittle: controller.sections[index]["title"]!,
-                                textSize: 10,
-                                textWeight: FontWeight.w500,
-                                maxTextlines: 2,
-                              ),
+                                  H2Text(
+                                    tittle:
+                                        controller.sections[index]["title"]!,
+                                    textSize: FontSize.cardTitle(context),
+                                    textWeight: FontWeight.w500,
+                                    maxTextlines: 2,
+                                  ),
                               iconColor: Colors.orange,
                               collapsedIconColor: Colors.black,
                               backgroundColor: controller.isExpanded.value
@@ -176,7 +174,7 @@ class AboutScreen extends StatelessWidget {
                                     tittle:
                                         controller.sections[index]["content"]!,
                                     maxTextlines: 15,
-                                    textSize: 08,
+                                    textSize: FontSize.cardSubTitle(context),
                                   ),
                                 ),
                               ],
@@ -222,8 +220,8 @@ class CustomExpansionTile extends StatelessWidget {
             textSize: 50,
             textWeight: FontWeight.w500,
           ),
-          // Text("title", style: AppTypography.bodyLarge(context)),
 
+          // Text("title", style: AppTypography.bodyLarge(context)),
           SizedBox(
             width: ScreenSize.width(context),
             child: Divider(color: Color(0xFFE4E4E7), thickness: 0.9),

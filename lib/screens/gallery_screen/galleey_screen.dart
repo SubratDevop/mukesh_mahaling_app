@@ -5,6 +5,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:mukesh_mahaling/core/extension/sizedbox.dart';
+import 'package:mukesh_mahaling/core/resources/font_size.dart';
 import 'package:mukesh_mahaling/screens/gallery_screen/video_gallery.dart';
 
 import '../../core/resources/app_text_size.dart';
@@ -45,7 +46,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
                   Center(
                     child: H1Text(
                       tittle: "Gallery",
-                      textSize: 22,
+                      textSize: FontSize.screenHeading(context),
                       tittleColor: AppColor.primaryColor,
                     ),
                   ),
@@ -139,7 +140,7 @@ class _PhotoVideoToggleState extends State<PhotoVideoToggle> {
                 ? AppColor.primaryColor
                 : const Color(0xFFA1A1AA),
             textWeight: FontWeight.w500,
-            textSize: 16,
+            textSize: FontSize.cardTitle(context)
           ),
         ),
       ),

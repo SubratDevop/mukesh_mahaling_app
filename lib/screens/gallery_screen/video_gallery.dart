@@ -1,6 +1,7 @@
 //! Video Gallery Section
 
 import 'package:flutter/material.dart';
+import 'package:mukesh_mahaling/core/resources/font_size.dart';
 import 'package:mukesh_mahaling/core/routes/pages.dart';
 import 'package:mukesh_mahaling/screens/youtube_video_screen.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
@@ -79,26 +80,29 @@ class _VideoGalleryState extends State<VideoGallery> {
                 Positioned(
                   top: 8,
                   left: 8,
+                  right: 8,
                   child: Container(
                     width: ScreenSize.width(context),
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 8,
+                      horizontal: 15,
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.black26,
-                      borderRadius: BorderRadius.circular(6),
+                      color: Colors.black54,
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     child: DescText(
                       tittle: thumbNail[index],
                       tittleColor: Colors.white,
                       maxTextlines: 2,
+                      textOverflow: TextOverflow.ellipsis,
+                      textSize: FontSize.cardSubTitle(context),
 
                     ),
                   ),
                 ),
 
-                // Play button
+                //* Play button
                 Container(
                   decoration: const BoxDecoration(
                     color: Colors.white,

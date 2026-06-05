@@ -1,8 +1,12 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:mukesh_mahaling/core/extension/sizedbox.dart';
 import 'package:mukesh_mahaling/core/resources/font_size.dart';
 import 'package:mukesh_mahaling/core/routes/pages.dart';
 import 'package:mukesh_mahaling/core/widgets/app_bar.dart';
+
+import '../../core/resources/view_all_button.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -73,14 +77,14 @@ class HomeScreen extends StatelessWidget {
                     H1Text(
                       tittle: "Dr. Mukesh Mahaling",
                       tittleColor: AppColor.primaryColor,
-                      textSize: AppTextSize.h1Textsize,
+                      textSize:FontSize.bodyLarge(context),
                     ),
                     H2Text(
                       tittle:
                           "Hon’ble Minister for Health & Family Welfare, Parliamentary Affairs and Electronics & IT Dept., Govt. Of Odisha \n Hon’ble MLA, Loisingha Assembly Constituency",
                       textWeight: FontWeight.w400,
                       maxTextlines: 5,
-                      textSize: AppTextSize.h4Textsize - 2,
+                      textSize: FontSize.caption(context),
                       textOverflow: TextOverflow.ellipsis,
                     ),
                     15.kH,
@@ -107,9 +111,9 @@ class HomeScreen extends StatelessWidget {
                           10.kH,
                           GrievanceCard(),
                           10.kH,
-                          // DevelopmentalWorksCard(),
-                          // 10.kH,
-                          // NewsletterCard(),
+                          DevelopmentalWorksCard(),
+                          10.kH,
+                          NewsletterCard(),
                           15.kH,
                         ],
                       ),
@@ -148,9 +152,10 @@ class GrievanceCard extends StatelessWidget {
               children: [
                 Icon(Icons.assignment, size: 22, color: Colors.black87),
                 8.kW,
-                Text(
-                  "Hello World",
-                  style: TextStyle(fontSize: FontSize.cardTitle(context)),
+                H2Text(
+                  tittle: "Grievance Redressal",
+                  textSize: FontSize.cardTitle(context),
+                  textWeight: FontWeight.w600,
                 ),
               ],
             ),
@@ -177,7 +182,7 @@ class GrievanceCard extends StatelessWidget {
                     icon: const Icon(Icons.add, color: Colors.white, size: 22),
                     label: H2Text(
                       tittle: "Register",
-                      // textSize: AppFontSize.title(context),
+                      textSize: FontSize.button(context),
                       tittleColor: Colors.white,
                       textWeight: FontWeight.w600,
                     ),
@@ -201,8 +206,8 @@ class GrievanceCard extends StatelessWidget {
                       size: 22,
                     ),
                     label: H2Text(
-                      tittle: "Track Status",
-                      textSize: 9,
+                      tittle: "Register",
+                      textSize: FontSize.button(context),
                       tittleColor: Colors.black,
                       textWeight: FontWeight.w600,
                     ),
@@ -219,198 +224,155 @@ class GrievanceCard extends StatelessWidget {
 
 // //! DevelopmentalWorksCard
 
-// class DevelopmentalWorksCard extends StatelessWidget {
-//   const DevelopmentalWorksCard({super.key});
+class DevelopmentalWorksCard extends StatelessWidget {
+  const DevelopmentalWorksCard({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Card(
-//       color: Color(0xFFFAFAFA),
-//       shape: RoundedRectangleBorder(
-//         borderRadius: BorderRadius.circular(12),
-//         side: BorderSide(color: Color(0xFFE4E4E7)),
-//       ),
-//       child: Padding(
-//         padding: const EdgeInsets.all(16),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             //^ Header Row (Title + View All)
-//             Row(
-//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//               children: [
-//                 Row(
-//                   children: [
-//                     Icon(Icons.apartment, color: Colors.black87),
-//                     const SizedBox(width: 6),
-//                     H2Text(
-//                       tittle: "Developmental Works",
-//                       textSize:AppFontSize.title(context) , //10,,
-//                       tittleColor: Colors.white,
-//                       textWeight: FontWeight.w600,
-//                     ),
-//                   ],
-//                 ),
-//                 TextButton.icon(
-//                   onPressed: () {},
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: Color(0xFFFAFAFA),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+        side: BorderSide(color: Color(0xFFE4E4E7)),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //^ Header Row (Title + View All)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.apartment, color: Colors.black87),
+                    const SizedBox(width: 6),
+                    H2Text(
+                      tittle: "Developmental Works",
+                      textSize: FontSize.cardTitle(context),
+                      textWeight: FontWeight.w600,
+                    ),
+                  ],
+                ),
 
-//                   icon: SizedBox.shrink(),
-//                   label: Text(
-//                     "View All",
+                //* View All button
+                ViewAllBtn(),
+              ],
+            ),
+            const SizedBox(height: 12),
 
-//                     style: TextStyle(
-//                       fontSize: 7,
-//                       decoration: TextDecoration.underline,
-//                       decorationColor: Colors.deepOrange,
-//                       decorationThickness: 2,
-//                       color: Colors.deepOrange,
-//                       height: 1.5,
-//                       fontWeight: FontWeight.w500,
-//                     ),
-//                   ),
-//                   style: TextButton.styleFrom(
-//                     padding: EdgeInsets.zero,
-//                     minimumSize: Size(0, 0),
-//                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-//                   ),
-//                 ),
-//               ],
-//             ),
-//             const SizedBox(height: 12),
+            // Image Section
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                "assets/images/puitala_office.png", // replace with your image
+                fit: BoxFit.cover,
+              ),
+            ),
+            const SizedBox(height: 8),
 
-//             // Image Section
-//             ClipRRect(
-//               borderRadius: BorderRadius.circular(10),
-//               child: Image.asset(
-//                 "assets/images/puitala_office.png", // replace with your image
-//                 fit: BoxFit.cover,
-//               ),
-//             ),
-//             const SizedBox(height: 8),
-
-//             // Caption
-//             Text(
-//               "New office at Puitala block inaugurated",
-//               style: TextStyle(fontSize: 09, fontWeight: FontWeight.w500),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
+            // Caption
+            DescText(
+              tittle: "New office at Puitala block inaugurated",
+              textSize: FontSize.cardSubTitle(context),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 // //! NewsletterCard
 
-// class NewsletterCard extends StatelessWidget {
-//   const NewsletterCard({super.key});
+class NewsletterCard extends StatelessWidget {
+  const NewsletterCard({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     final months = ["July", "June", "May"];
-//     final year = "2025";
+  @override
+  Widget build(BuildContext context) {
+    final months = ["July", "June", "May"];
+    final year = "2025";
 
-//     return Card(
-//       color: Color(0xFFFAFAFA),
-//       shape: RoundedRectangleBorder(
-//         borderRadius: BorderRadius.circular(12),
-//         side: BorderSide(color: Color(0xFFE4E4E7)),
-//       ),
-//       child: Padding(
-//         padding: const EdgeInsets.all(16),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             // Header Row
-//             Row(
-//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//               children: [
-//                 Row(
-//                   children: [
-//                     Icon(Icons.newspaper_outlined, color: Colors.black87),
-//                     const SizedBox(width: 6),
-//                     H2Text(
-//                       tittle: "Newsletter",
-//                       textSize:AppFontSize.title(context) , //10,,
-//                       tittleColor: Colors.white,
-//                       textWeight: FontWeight.w600,
-//                     ),
-//                   ],
-//                 ),
-//                 TextButton.icon(
-//                   onPressed: () {},
+    return Card(
+      color: Color(0xFFFAFAFA),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+        side: BorderSide(color: Color(0xFFE4E4E7)),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Header Row
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.newspaper_outlined, color: Colors.black87),
+                    const SizedBox(width: 6),
+                    H2Text(
+                      tittle: "Newsletter",
+                      textSize: FontSize.cardTitle(context),
+                      textWeight: FontWeight.w600,
+                    ),
+                  ],
+                ),
+                //* View All button
+                ViewAllBtn(),
+              ],
+            ),
+            const SizedBox(height: 12),
 
-//                   icon: SizedBox.shrink(),
-//                   label: Text(
-//                     "View All",
-
-//                     style: TextStyle(
-//                       fontSize: 7,
-//                       decoration: TextDecoration.underline,
-//                       decorationColor: Colors.deepOrange,
-//                       decorationThickness: 2,
-//                       color: Colors.deepOrange,
-//                       height: 1.5,
-//                       fontWeight: FontWeight.w500,
-//                     ),
-//                   ),
-//                   style: TextButton.styleFrom(
-//                     padding: EdgeInsets.zero,
-//                     minimumSize: Size(0, 0),
-//                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-//                   ),
-//                 ),
-//               ],
-//             ),
-//             const SizedBox(height: 12),
-
-//             // Horizontal Month List
-//             SizedBox(
-//               height: 90,
-//               child: ListView.separated(
-//                 scrollDirection: Axis.horizontal,
-//                 itemCount: months.length,
-//                 separatorBuilder: (_, __) => const SizedBox(width: 12),
-//                 itemBuilder: (context, index) {
-//                   return Container(
-//                     width: 80,
-//                     padding: const EdgeInsets.all(12),
-//                     decoration: BoxDecoration(
-//                       color: Colors.grey[100],
-//                       borderRadius: BorderRadius.circular(12),
-//                       border: Border.all(
-//                         color: Colors.grey.withValues(alpha: 0.5),
-//                         width: 1,
-//                       ),
-//                     ),
-//                     child: Column(
-//                       mainAxisAlignment: MainAxisAlignment.center,
-//                       children: [
-//                         Text(
-//                           months[index],
-//                           style: TextStyle(
-//                             fontSize: 11,
-//                             fontWeight: FontWeight.bold,
-//                             color: Colors.deepOrange,
-//                           ),
-//                         ),
-//                         const SizedBox(height: 4),
-//                         Text(
-//                           year,
-//                           style: TextStyle(fontSize: 9, color: Colors.black87),
-//                         ),
-//                       ],
-//                     ),
-//                   );
-//                 },
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
+            // Horizontal Month List
+            SizedBox(
+              height: 90,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemCount: months.length,
+                separatorBuilder: (_, __) => const SizedBox(width: 12),
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: 80,
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[100],
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: Colors.grey.withValues(alpha: 0.5),
+                        width: 1,
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          months[index],
+                          style: TextStyle(
+                            fontSize: FontSize.cardSubTitle(context),
+                            fontWeight: FontWeight.bold,
+                            color: Colors.deepOrange,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          year,
+                          style: TextStyle(fontSize: 9, color: Colors.black87),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 // //! CustomDrawer
 
@@ -462,56 +424,56 @@ class CustomDrawer extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () => Navigator.of(context).pop(),
-                        child: buildMenuItem("Home"),
+                        child: buildMenuItem("Home",context),
                       ),
                       GestureDetector(
                         onTap: () {
                           drawerKey!.currentState!.openEndDrawer();
                           Get.toNamed("AboutScreen");
                         },
-                        child: buildMenuItem("About"),
+                        child: buildMenuItem("About",context),
                       ),
                       GestureDetector(
                         onTap: () {
                           drawerKey!.currentState!.openEndDrawer();
                           Get.toNamed("VisionMissionScreen");
                         },
-                        child: buildMenuItem("Vision & Mission"),
+                        child: buildMenuItem("Vision & Mission",context),
                       ),
                       GestureDetector(
                         onTap: () {
                           drawerKey!.currentState!.openEndDrawer();
                           Get.toNamed("GalleryScreen");
                         },
-                        child: buildMenuItem("Gallery"),
+                        child: buildMenuItem("Gallery",context),
                       ),
                       GestureDetector(
                         onTap: () {
                           drawerKey!.currentState!.openEndDrawer();
                           Get.toNamed("DevelopmentWorkScreen");
                         },
-                        child: buildMenuItem("Development Works"),
+                        child: buildMenuItem("Development Works",context),
                       ),
                       GestureDetector(
                         onTap: () {
                           drawerKey!.currentState!.openEndDrawer();
                           Get.toNamed("SuceessStoriesScreen");
                         },
-                        child: buildMenuItem("Success Stories"),
+                        child: buildMenuItem("Success Stories",context),
                       ),
                       GestureDetector(
                         onTap: () {
                           drawerKey!.currentState!.openEndDrawer();
                           Get.toNamed("NewsLetterScreen");
                         },
-                        child: buildMenuItem("News Letter"),
+                        child: buildMenuItem("News Letter",context),
                       ),
                       GestureDetector(
                         onTap: () {
                           drawerKey!.currentState!.openEndDrawer();
                           Get.toNamed("ContactUsScreen");
                         },
-                        child: buildMenuItem("Contact"),
+                        child: buildMenuItem("Contact",context),
                       ),
                       // buildMenuItem(
                       //   "More",
@@ -563,7 +525,7 @@ class CustomDrawer extends StatelessWidget {
     );
   }
 
-  Widget buildMenuItem(String title, {Widget? trailing}) {
+  Widget buildMenuItem(String title,BuildContext c , {Widget? trailing}) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 10),
       child: Row(
@@ -572,7 +534,7 @@ class CustomDrawer extends StatelessWidget {
             child: H2Text(
               tittle: title,
               tittleColor: Colors.white,
-              textSize: 10,
+              textSize: FontSize.cardTitle(c),
             ),
           ),
           if (trailing != null) trailing,

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:mukesh_mahaling/core/extension/sizedbox.dart';
+import 'package:mukesh_mahaling/core/resources/font_size.dart';
 
 import '../../core/resources/app_text_size.dart';
 import '../../core/resources/colors.dart';
@@ -131,7 +132,7 @@ class DevelopmentWorkScreen extends StatelessWidget {
                 children: [
                   Center(
                     child: H1Text(
-                      textSize: 22,
+                      textSize: FontSize.screenHeading(context),
                       tittle: "Development",
                       tittleColor: AppColor.primaryColor,
                     ),
@@ -177,6 +178,7 @@ class DevelopmentWorkScreen extends StatelessWidget {
                           tittle: developmentList[__],
                           tittleColor: AppColor.primaryColor,
                           maxTextlines: 2,
+                          textSize: FontSize.cardTitle(context),
                           textWeight: FontWeight.w600,
                         ),
                         10.kH,

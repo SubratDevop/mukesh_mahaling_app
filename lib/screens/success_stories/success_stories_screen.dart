@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:mukesh_mahaling/core/extension/sizedbox.dart';
+import 'package:mukesh_mahaling/core/resources/font_size.dart';
 import 'package:mukesh_mahaling/screens/youtube_video_screen.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -56,7 +57,8 @@ class SuceessStoriesScreen extends StatelessWidget {
                     child: H1Text(
                       tittle: "OUR SUCCESS STORIES",
                       tittleColor: AppColor.primaryColor,
-                      textSize: 22,
+                      textWeight: FontWeight.bold,
+                      textSize: FontSize.screenHeading(context) - 7,
                     ),
                   ),
                   Align(
@@ -114,6 +116,7 @@ class SuceessStoriesScreen extends StatelessWidget {
                           Positioned(
                             top: 8,
                             left: 8,
+                            right: 8,
                             child: Container(
                               width: ScreenSize.width(context),
                               padding: const EdgeInsets.symmetric(
@@ -121,18 +124,19 @@ class SuceessStoriesScreen extends StatelessWidget {
                                 vertical: 4,
                               ),
                               decoration: BoxDecoration(
-                                color: Colors.black26,
-                                borderRadius: BorderRadius.circular(6),
+                                color: Colors.black54,
+                                borderRadius: BorderRadius.circular(10),
                               ),
                               child: DescText(
                                 tittle: thumbNail[index],
                                 tittleColor: Colors.white,
                                 maxTextlines: 2,
+                                textSize: FontSize.cardSubTitle(context),
                               ),
                             ),
                           ),
 
-                          // Play button
+                          //* Play button
                           Container(
                             decoration: const BoxDecoration(
                               color: Colors.white,
@@ -152,8 +156,7 @@ class SuceessStoriesScreen extends StatelessWidget {
                 },
               ),
             ),
-                  20.kH
-
+            20.kH,
           ],
         ),
       ),

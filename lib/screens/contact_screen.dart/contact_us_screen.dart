@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:mukesh_mahaling/core/resources/font_size.dart';
 
 import '../../core/resources/app_text_size.dart';
 import '../../core/resources/colors.dart';
@@ -25,7 +26,7 @@ class ContactUsScreen extends StatelessWidget {
                 children: [
                   Center(
                     child: H1Text(
-                      textSize: 22,
+                      textSize: FontSize.screenHeading(context),
                       tittle: "Contact Us",
                       tittleColor: AppColor.primaryColor,
                     ),
