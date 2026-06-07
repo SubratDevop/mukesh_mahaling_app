@@ -2,7 +2,7 @@ class Strings {
   Strings._();
 
 //~ General
-  static const String appName = 'Nursing App';
+  static const String appName = 'Dr. Mukesh Mahaling';
 
 //~ Splash Screen
   static const String splashText1 = "Empowering Healthcare";

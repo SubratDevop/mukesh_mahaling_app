@@ -1,7 +1,5 @@
 import 'dart:async';
 
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mukesh_mahaling/core/widgets/app_statusbar.dart';
@@ -13,13 +11,13 @@ Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(
-    // const MyApp(),
+    const MyApp(),
 
     //^  with device Preview
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => const MyApp(), // Wrap your app
-    ),
+    // DevicePreview(
+    //   enabled: !kReleaseMode,
+    //   builder: (context) => const MyApp(), // Wrap your app
+    // ),
   );
 }
 

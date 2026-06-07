@@ -57,44 +57,44 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          Column(
-            children: [
-              //! first portin content
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipOval(
-                      child: Image.asset(
-                        "assets/images/mukeshh.png",
-                        height: 100,
-                        width: 100,
-                        fit: BoxFit.cover,
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                //! first portin content
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ClipOval(
+                        child: Image.asset(
+                          "assets/images/mukeshh.png",
+                          height: 100,
+                          width: 100,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    12.kH,
-                    H1Text(
-                      tittle: "Dr. Mukesh Mahaling",
-                      tittleColor: AppColor.primaryColor,
-                      textSize:FontSize.bodyLarge(context),
-                    ),
-                    H2Text(
-                      tittle:
-                          "Hon’ble Minister for Health & Family Welfare, Parliamentary Affairs and Electronics & IT Dept., Govt. Of Odisha \n Hon’ble MLA, Loisingha Assembly Constituency",
-                      textWeight: FontWeight.w400,
-                      maxTextlines: 5,
-                      textSize: FontSize.caption(context),
-                      textOverflow: TextOverflow.ellipsis,
-                    ),
-                    15.kH,
-                  ],
+                      12.kH,
+                      H1Text(
+                        tittle: "Dr. Mukesh Mahaling",
+                        tittleColor: AppColor.primaryColor,
+                        textSize:FontSize.bodyLarge(context),
+                      ),
+                      H2Text(
+                        tittle:
+                            "Hon’ble Minister for Health & Family Welfare, Parliamentary Affairs and Electronics & IT Dept., Govt. Of Odisha \n Hon’ble MLA, Loisingha Assembly Constituency",
+                        textWeight: FontWeight.w400,
+                        maxTextlines: 5,
+                        textSize: FontSize.caption(context),
+                        textOverflow: TextOverflow.ellipsis,
+                      ),
+                      15.kH,
+                    ],
+                  ),
                 ),
-              ),
-
-              //! second portin content
-              Expanded(
-                child: Container(
+            
+                //! second portin content
+                Container(
                   width: ScreenSize.width(context),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -103,25 +103,23 @@ class HomeScreen extends StatelessWidget {
                       topRight: Radius.circular(34),
                     ),
                   ),
-                  child: SingleChildScrollView(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15.0),
-                      child: Column(
-                        children: [
-                          10.kH,
-                          GrievanceCard(),
-                          10.kH,
-                          DevelopmentalWorksCard(),
-                          10.kH,
-                          NewsletterCard(),
-                          15.kH,
-                        ],
-                      ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15.0),
+                    child: Column(
+                      children: [
+                        10.kH,
+                        GrievanceCard(),
+                        10.kH,
+                        DevelopmentalWorksCard(),
+                        10.kH,
+                        NewsletterCard(),
+                        15.kH,
+                      ],
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
@@ -206,7 +204,7 @@ class GrievanceCard extends StatelessWidget {
                       size: 22,
                     ),
                     label: H2Text(
-                      tittle: "Register",
+                      tittle: "Track Status",
                       textSize: FontSize.button(context),
                       tittleColor: Colors.black,
                       textWeight: FontWeight.w600,

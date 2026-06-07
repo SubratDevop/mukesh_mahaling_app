@@ -53,7 +53,7 @@ class AboutScreen extends StatelessWidget {
                 ],
               ),
             ),
-
+              
             Expanded(
               child: Container(
                 width: ScreenSize.width(context),
@@ -64,71 +64,73 @@ class AboutScreen extends StatelessWidget {
                     topRight: Radius.circular(34),
                   ),
                 ),
-                child: Column(
-                  children: [
-                    Container(
-                      height: 150,
-                      width: ScreenSize.width(context),
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage("assets/images/flag.png"),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      child: Image.asset(
-                        "assets/images/mukesh.png",
-                        height: 100,
-                        width: 100,
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                    10.kH,
-
-                    RichText(
-                      text: TextSpan(
-                        text: "Dr. Mukesh Mahalingis ", // default style
-                        style: GoogleFonts.outfit(
-                          fontSize: FontSize.cardTitle(context),
-                          fontWeight: FontWeight.w700,
-                          color: const Color(0xFF22262F),
-                        ),
-                        children: [
-                          TextSpan(
-                            text:
-                                "an Indian Politician born in the year 1973 in the village Nagaon (B) of Agalpur Block of Balangir district coming under jurisdiction of 66-Loisingha Assembly Constituency of the State of Odisha. Dr. Mahaling being a Member of Bharatiya Janata Party (BJP) has been elected as Member of Legislative Assembly (MLA) in the General Election 2019 for 66-Loisingha Assembly Constituency. ",
-                            style: GoogleFonts.outfit(
-                              fontSize: FontSize.cardTitle(context),
-                              fontWeight: FontWeight.w300,
-                              color: const Color(0xFF22262F),
-                            ),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 150,
+                        width: ScreenSize.width(context),
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/flag.png"),
+                            fit: BoxFit.fill,
                           ),
-                        ],
-                      ),
-                    ),
-
-                    15.kH,
-
-                    H1Text(
-                      tittle: "Journey So Far",
-                      tittleColor: AppColor.primaryColor,
-                      textSize: FontSize.bodyLarge(context),
-                      textWeight: FontWeight.w500,
-                    ),
-                    2.kH,
-                    Center(
-                      child: SizedBox(
-                        width: ScreenSize.width(context) / 8,
-                        child: Divider(
-                          height: 2,
-                          color: Colors.black,
-                          thickness: 2,
+                        ),
+                        child: Image.asset(
+                          "assets/images/mukesh.png",
+                          height: 100,
+                          width: 100,
+                          fit: BoxFit.contain,
                         ),
                       ),
-                    ),
-                    10.kH,
-
-                    Expanded(
-                      child: ListView.separated(
+                      10.kH,
+                              
+                      RichText(
+                        text: TextSpan(
+                          text: "Dr. Mukesh Mahalingis ", // default style
+                          style: GoogleFonts.outfit(
+                            fontSize: FontSize.cardTitle(context),
+                            fontWeight: FontWeight.w700,
+                            color: const Color(0xFF22262F),
+                          ),
+                          children: [
+                            TextSpan(
+                              text:
+                                  "an Indian Politician born in the year 1973 in the village Nagaon (B) of Agalpur Block of Balangir district coming under jurisdiction of 66-Loisingha Assembly Constituency of the State of Odisha. Dr. Mahaling being a Member of Bharatiya Janata Party (BJP) has been elected as Member of Legislative Assembly (MLA) in the General Election 2019 for 66-Loisingha Assembly Constituency. ",
+                              style: GoogleFonts.outfit(
+                                fontSize: FontSize.cardTitle(context),
+                                fontWeight: FontWeight.w300,
+                                color: const Color(0xFF22262F),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                              
+                      15.kH,
+                              
+                      H1Text(
+                        tittle: "Journey So Far",
+                        tittleColor: AppColor.primaryColor,
+                        textSize: FontSize.bodyLarge(context),
+                        textWeight: FontWeight.w500,
+                      ),
+                      2.kH,
+                      Center(
+                        child: SizedBox(
+                          width: ScreenSize.width(context) / 8,
+                          child: Divider(
+                            height: 2,
+                            color: Colors.black,
+                            thickness: 2,
+                          ),
+                        ),
+                      ),
+                      10.kH,
+                              
+                      ListView.separated(
+                        shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
                         separatorBuilder: (_, __) => Divider(
                           height: 1,
                           indent: 20,
@@ -148,7 +150,7 @@ class AboutScreen extends StatelessWidget {
                               initiallyExpanded: controller.isExpanded.value,
                               onExpansionChanged: (expanded) =>
                                   controller.onExpansionChange(index, expanded),
-
+                      
                               title:
                                   H2Text(
                                     tittle:
@@ -182,13 +184,14 @@ class AboutScreen extends StatelessWidget {
                           );
                         },
                       ),
-                    ),
-
-                    25.kH,
-                  ],
+                              
+                      25.kH,
+                    ],
+                  ),
                 ),
               ),
             ),
+       
           ],
         ),
       ),
