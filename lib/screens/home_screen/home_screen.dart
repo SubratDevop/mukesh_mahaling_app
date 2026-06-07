@@ -272,7 +272,7 @@ class DevelopmentalWorksCard extends StatelessWidget {
 
             // Caption
             DescText(
-              tittle: "New office at Puitala block inaugurated",
+              tittle: "New office at Puintala block inaugurated",
               textSize: FontSize.cardSubTitle(context),
             ),
           ],
