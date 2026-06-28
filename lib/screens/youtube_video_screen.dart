@@ -20,8 +20,8 @@ class _YoutubeVideoScreenState extends State<YoutubeVideoScreen> {
       body: Center(
         child: YoutubePlayer(
           controller: widget.controller,
-          showVideoProgressIndicator: true,
-          progressIndicatorColor: Colors.red,
+          progressIndicatorColor: Colors.orange,
+          
         ),
       ),
     );

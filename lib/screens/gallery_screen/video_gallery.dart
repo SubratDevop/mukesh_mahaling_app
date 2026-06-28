@@ -47,17 +47,19 @@ class _VideoGalleryState extends State<VideoGallery> {
   Widget build(BuildContext context) {
     return
      ListView.separated(
-      separatorBuilder: (_, __) =>
+      separatorBuilder: (_, _) =>
           Divider(height: 20, color: Colors.transparent),
       itemCount: thumbNailList.length,
       itemBuilder: (_, index) {
         return InkWell(
           onTap: () {
             controller = YoutubePlayerController(
+              
               initialVideoId: YoutubePlayer.convertUrlToId(
                 videoList[index],
               )!, // extract videoId
               flags: const YoutubePlayerFlags(autoPlay: false, mute: false),
+
             );
             Get.to(YoutubeVideoScreen(controller: controller));
             setState(() {

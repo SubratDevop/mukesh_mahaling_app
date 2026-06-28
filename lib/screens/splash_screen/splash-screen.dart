@@ -19,7 +19,7 @@ class SplashScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/images/bjp.png",
+              "assets/images/mahaling_icon.png",
               height: 150,
               width: 150,
               fit: BoxFit.cover,

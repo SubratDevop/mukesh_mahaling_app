@@ -80,18 +80,7 @@ class _TrackStatusScreenState extends State<TrackStatusScreen> {
                   verticalScrollBarEnabled: false, // hides scrollbar
                   disableHorizontalScroll: false,
                 ),
-                initialOptions: InAppWebViewGroupOptions(
-                  android: AndroidInAppWebViewOptions(useHybridComposition: true),
-                  crossPlatform: InAppWebViewOptions(
-                    useOnLoadResource: true,
-                    allowFileAccessFromFileURLs: true,
-                    allowUniversalAccessFromFileURLs: true,
-                    useOnDownloadStart: true,
-                    useShouldInterceptFetchRequest: true,
-                    javaScriptCanOpenWindowsAutomatically: true,
-                    javaScriptEnabled: true,
-                  ),
-                ),
+               
                 initialUrlRequest: URLRequest(
                   url: WebUri("https://drmukeshmahaling.in/Track/mobile"),
                   // method: 'POST',

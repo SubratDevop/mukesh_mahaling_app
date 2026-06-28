@@ -6,6 +6,6 @@ class SplashController extends GetxController {
     // TODO: implement onInit
     super.onInit();
     await Future.delayed(const Duration(seconds: 1));
-    Get.toNamed("HomeScreen");
+    // Get.offAllNamed('HomeScreen');
   }
 }

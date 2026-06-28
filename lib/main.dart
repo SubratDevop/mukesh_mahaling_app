@@ -9,7 +9,6 @@ import 'core/routes/app_routes.dart';
 
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
-
   runApp(
     const MyApp(),
 

@@ -12,9 +12,14 @@ import '../../core/resources/app_text_size.dart';
 import '../../core/resources/colors.dart';
 import '../../core/resources/screen_size.dart';
 
-class SuceessStoriesScreen extends StatelessWidget {
-  SuceessStoriesScreen({super.key});
+class SuceessStoriesScreen extends StatefulWidget {
+  const SuceessStoriesScreen({super.key});
 
+  @override
+  State<SuceessStoriesScreen> createState() => _SuceessStoriesScreenState();
+}
+
+class _SuceessStoriesScreenState extends State<SuceessStoriesScreen> {
   List thumbNailList = [
     "https://drmukeshmahaling.in/assets/frontend/images/development/image23.jpeg",
     "https://drmukeshmahaling.in/assets/frontend/images/development/image23.jpeg",
@@ -37,7 +42,13 @@ class SuceessStoriesScreen extends StatelessWidget {
     "https://youtu.be/ah9yG3-om6Y",
     "https://youtu.be/Br_OYsprRHQ",
   ];
+
   late YoutubePlayerController controller;
+
+    @override
+  void dispose() {
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,13 +93,14 @@ class SuceessStoriesScreen extends StatelessWidget {
             Expanded(
               child: ListView.separated(
                 padding: EdgeInsets.zero,
-                separatorBuilder: (_, __) =>
+                separatorBuilder: (_, _) =>
                     Divider(height: 20, color: Colors.transparent),
                 itemCount: thumbNailList.length,
                 itemBuilder: (_, index) {
                   return InkWell(
                     onTap: () {
                       controller = YoutubePlayerController(
+
                         initialVideoId: YoutubePlayer.convertUrlToId(
                           videoList[index],
                         )!, // extract videoId
@@ -97,6 +109,7 @@ class SuceessStoriesScreen extends StatelessWidget {
                           mute: false,
                         ),
                       );
+                     
                       Get.to(YoutubeVideoScreen(controller: controller));
                     }, // whole card tappable
                     child: ClipRRect(

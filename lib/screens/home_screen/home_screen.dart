@@ -78,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                       H1Text(
                         tittle: "Dr. Mukesh Mahaling",
                         tittleColor: AppColor.primaryColor,
-                        textSize:FontSize.bodyLarge(context),
+                        textSize: FontSize.bodyLarge(context),
                       ),
                       H2Text(
                         tittle:
@@ -92,7 +92,7 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-            
+
                 //! second portin content
                 Container(
                   width: ScreenSize.width(context),
@@ -330,7 +330,7 @@ class NewsletterCard extends StatelessWidget {
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 itemCount: months.length,
-                separatorBuilder: (_, __) => const SizedBox(width: 12),
+                separatorBuilder: (_, _) => const SizedBox(width: 12),
                 itemBuilder: (context, index) {
                   return Container(
                     width: 80,
@@ -422,56 +422,56 @@ class CustomDrawer extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () => Navigator.of(context).pop(),
-                        child: buildMenuItem("Home",context),
+                        child: buildMenuItem("Home", context),
                       ),
                       GestureDetector(
                         onTap: () {
                           drawerKey!.currentState!.openEndDrawer();
                           Get.toNamed("AboutScreen");
                         },
-                        child: buildMenuItem("About",context),
+                        child: buildMenuItem("About", context),
                       ),
                       GestureDetector(
                         onTap: () {
                           drawerKey!.currentState!.openEndDrawer();
                           Get.toNamed("VisionMissionScreen");
                         },
-                        child: buildMenuItem("Vision & Mission",context),
+                        child: buildMenuItem("Vision & Mission", context),
                       ),
                       GestureDetector(
                         onTap: () {
                           drawerKey!.currentState!.openEndDrawer();
                           Get.toNamed("GalleryScreen");
                         },
-                        child: buildMenuItem("Gallery",context),
+                        child: buildMenuItem("Gallery", context),
                       ),
                       GestureDetector(
                         onTap: () {
                           drawerKey!.currentState!.openEndDrawer();
                           Get.toNamed("DevelopmentWorkScreen");
                         },
-                        child: buildMenuItem("Development Works",context),
+                        child: buildMenuItem("Development Works", context),
                       ),
                       GestureDetector(
                         onTap: () {
                           drawerKey!.currentState!.openEndDrawer();
                           Get.toNamed("SuceessStoriesScreen");
                         },
-                        child: buildMenuItem("Success Stories",context),
+                        child: buildMenuItem("Success Stories", context),
                       ),
                       GestureDetector(
                         onTap: () {
                           drawerKey!.currentState!.openEndDrawer();
                           Get.toNamed("NewsLetterScreen");
                         },
-                        child: buildMenuItem("News Letter",context),
+                        child: buildMenuItem("News Letter", context),
                       ),
                       GestureDetector(
                         onTap: () {
                           drawerKey!.currentState!.openEndDrawer();
                           Get.toNamed("ContactUsScreen");
                         },
-                        child: buildMenuItem("Contact",context),
+                        child: buildMenuItem("Contact", context),
                       ),
                       // buildMenuItem(
                       //   "More",
@@ -523,7 +523,7 @@ class CustomDrawer extends StatelessWidget {
     );
   }
 
-  Widget buildMenuItem(String title,BuildContext c , {Widget? trailing}) {
+  Widget buildMenuItem(String title, BuildContext c, {Widget? trailing}) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 10),
       child: Row(
@@ -535,7 +535,7 @@ class CustomDrawer extends StatelessWidget {
               textSize: FontSize.cardTitle(c),
             ),
           ),
-          if (trailing != null) trailing,
+          ?trailing,
         ],
       ),
     );
